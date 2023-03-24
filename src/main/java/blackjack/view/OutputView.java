@@ -1,9 +1,7 @@
 package blackjack.view;
 
-public class outputView {
+public class OutputView {
 
-    public String printJoinPlayer() {
-        System.out.println("");
-    }
+
 
 }
