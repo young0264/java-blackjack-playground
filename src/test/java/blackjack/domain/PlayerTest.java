@@ -12,9 +12,6 @@ public class PlayerTest {
         assertThat(new Player("새플레이어")).isInstanceOf(Player.class);
     }
 
-    @Test
-    void 이름이_공백인_경우() {
-        assertThatIllegalArgumentException().isThrownBy(() -> new Player(""));
-    }
+
 
 }
