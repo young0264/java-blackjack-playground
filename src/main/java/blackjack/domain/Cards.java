@@ -9,7 +9,9 @@ public class Cards {
         this.cards = cards;
     }
 
-    public void addCard(Card card) {
-        this.cards.add(card);
+    public List<Card> addCard(Card card) {
+        cards.add(card);
+        return cards;
     }
+
 }
