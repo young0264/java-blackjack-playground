@@ -1,5 +1,7 @@
 package blackjack.domain;
 
+import java.util.Arrays;
+
 public enum Denomination {
     ACE(1),
     TWO(2),
@@ -17,7 +19,6 @@ public enum Denomination {
 
     private final int score;
 
-
     Denomination(int i) {
         this.score = i;
     }
@@ -29,4 +30,13 @@ public enum Denomination {
     public int getScore() {
         return score;
     }
+
+    public static Denomination of(int point) {
+        return Arrays.stream(values())
+                .filter(denomination -> denomination.score == point)
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 범위의 숫자입니다."));
+    }
+
+
 }
