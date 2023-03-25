@@ -2,14 +2,14 @@ package blackjack.domain;
 
 public class Name {
 
-    String name;
+    private String name;
 
     public Name(String name) {
-        validateName(name);
+        validate(name);
         this.name = name;
     }
 
-    public void validateName(String name) {
+    public void validate(String name) {
         if (name == null || name.isEmpty()) {
             throw new IllegalArgumentException("플레이어 이름이 공백입니다.");
         }
