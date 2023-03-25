@@ -19,8 +19,8 @@ public enum Denomination {
 
     private final int score;
 
-    Denomination(int i) {
-        this.score = i;
+    Denomination(int score) {
+        this.score = score;
     }
 
     public boolean isAce() {
