@@ -13,14 +13,21 @@ public enum Denomination {
     EIGHT(8),
     NINE(9),
     TEN(10),
-    JACK(10),
-    QUEEN(10),
-    KING(10);
+    JACK(10, "J"),
+    QUEEN(10, "Q"),
+    KING(10, "K");
 
     private final int score;
+    private final String symbol;
 
     Denomination(int score) {
         this.score = score;
+        this.symbol = String.valueOf(score);
+    }
+
+    Denomination(int score, String symbol) {
+        this.score = score;
+        this.symbol = symbol;
     }
 
     public boolean isAce() {
@@ -29,6 +36,10 @@ public enum Denomination {
 
     public int getScore() {
         return score;
+    }
+
+    public String getSymbol() {
+        return symbol;
     }
 
     public static Denomination of(int point) {

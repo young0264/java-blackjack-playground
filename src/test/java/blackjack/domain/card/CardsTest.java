@@ -13,17 +13,20 @@ import static org.junit.jupiter.api.Assertions.*;
 class CardsTest {
     Card card1 = new Card(Denomination.ACE, Suit.DIAMONDS);
     Card card2 = new Card(Denomination.JACK, Suit.HEARTS);
-
+    Cards cards = new Cards();
     @Test
     void cards_create() {
-        assertThat(new Cards(Arrays.asList(card1, card2))).isInstanceOf(Cards.class);
+        cards.addCard(card1);
+        cards.addCard(card2);
+        assertThat(new Cards()).isInstanceOf(Cards.class);
     }
 
 
     @Test
     void add_card() {
         Card card3 = new Card(Denomination.FIVE, Suit.DIAMONDS);
-        Cards cards = new Cards(new ArrayList<>(Arrays.asList(card1, card2)));
+        cards.addCard(card1);
+        cards.addCard(card2);
         assertThat(cards.addCard(card3).size()).isEqualTo(3);
     }
 
