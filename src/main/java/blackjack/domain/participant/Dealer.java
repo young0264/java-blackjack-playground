@@ -1,17 +1,40 @@
-package blackjack.domain;
+package blackjack.domain.participant;
 
-public class Dealer {
+import blackjack.domain.card.Card;
+import blackjack.domain.card.Cards;
 
-    Name name;
-    int betMoney;
-    Cards cards;
+import java.util.List;
 
-    public Dealer(String name) {
-        this.name = new Name(name);
+public class Dealer extends Participant{
+
+//    Name name;
+//    int betMoney;
+
+    public Dealer() {
+        super("딜러");
     }
 
-    public int saveMoney(int betMoney) {
-        return this.betMoney = betMoney;
+//    public String getName() {
+//        return name.getName();
+//    }
+
+
+//    public int saveMoney(int betMoney) {
+//        return this.betMoney = betMoney;
+//    }
+
+    public boolean isUnder16() {
+        System.out.println("get c p " + getCardPoint());
+        return getCardPoint() <= 16;
+    }
+
+    public boolean isOver17() {
+        return getCardPoint() >= 17;
+    }
+
+    public boolean isOver21() {
+        int cardPoint = getCardPoint();
+        return cardPoint >= 21;
     }
 
 }

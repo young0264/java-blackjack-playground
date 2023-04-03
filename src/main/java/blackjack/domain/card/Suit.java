@@ -1,4 +1,4 @@
-package blackjack.domain;
+package blackjack.domain.card;
 
 import java.util.Arrays;
 
@@ -24,6 +24,5 @@ public enum Suit {
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 슈트입니다"));
     }
-
 
 }

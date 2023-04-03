@@ -1,2 +1,4 @@
-package blackjack.domain;public class BlackJackGame {
+package blackjack.domain;
+
+public class BlackJackGame {
 }

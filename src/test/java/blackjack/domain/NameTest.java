@@ -1,10 +1,10 @@
 package blackjack.domain;
 
+import blackjack.domain.participant.Name;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
-import static org.junit.jupiter.api.Assertions.*;
 
 class NameTest {
 

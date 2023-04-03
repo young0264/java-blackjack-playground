@@ -1,4 +1,4 @@
-package blackjack.domain;
+package blackjack.domain.participant;
 
 public class Name {
 
@@ -13,5 +13,9 @@ public class Name {
         if (name == null || name.isEmpty()) {
             throw new IllegalArgumentException("플레이어 이름이 공백입니다.");
         }
+    }
+
+    public String getName() {
+        return name;
     }
 }

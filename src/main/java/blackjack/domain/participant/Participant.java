@@ -10,7 +10,8 @@ public abstract class Participant {
     private Name name;
     private int betMoney;
     private Cards cards;
-    private int cardPoint;
+    private boolean isWinner = false;
+    private boolean isBust = false;
 
     protected Participant(String name) {
         this.name = new Name(name);
@@ -33,38 +34,45 @@ public abstract class Participant {
     public String getName() {
         return name.getName();
     }
+
     public int saveMoney(int betMoney) {
         return this.betMoney = betMoney;
     }
-    public int getCardPoint() {
-        List<Card> cards = this.cards.getCards();
-        int cardPoint = 0;
-        for (Card card : cards) {
-            cardPoint += card.getDenomination().getScore();
-        }
-        return this.cardPoint = cardPoint;
+
+    public int getBetMoney() {
+        return this.betMoney;
     }
-//
-//    public int getScore() {
-//        return cards.ge();
-//    }
-//
-//    public int getCardSize() {
-//        return cards.getCards().size();
-//    }
-//
-//    public List<Card> getCards() {
-//        return cards.getValue();
-//    }
-//
-//    public boolean isBust() {
-//        return cards.isBust();
-//    }
 
-//    public boolean isNotBust() {
-//        return !isBust();
-//    }
+    public int getCardPoint() {
+        return cards.getCardPoint();
+    }
 
-    public abstract boolean isWin(final Player player);
+    public boolean isBlakjack() {
+        return cards.isBlakjack();
+    }
+
+    public boolean isBust() {
+        return this.isBust = cards.isBust();
+    }
+
+    public boolean isNotBust() {
+        return cards.isNotBust();
+    }
+
+    public int gapBetween21() {
+        return Math.abs(21 - this.getCardPoint());
+    }
+
+    public void setWinner() {
+        this.isWinner = true;
+    }
+
+    public boolean getWinnerFlag() {
+        return this.isWinner;
+    }
+
+
+//    public abstract boolean isWin(final Player player);
+
 
 }

@@ -7,9 +7,8 @@ import java.util.stream.Collectors;
 public class Participants {
     List<Participant> participants;
 
-    public Participants(Dealer dealer, Players players) {
-        this.participants.add(dealer);
-        this.participants.addAll(players.getPlayers());
+    public Participants(List<Participant> participantList) {
+        this.participants = participantList;
     }
 
     public List<Participant> findWinner() {

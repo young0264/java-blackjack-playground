@@ -1,14 +1,8 @@
-package blackjack.domain;
+package blackjack.domain.card;
 
-import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 class CardsTest {
     Card card1 = new Card(Denomination.ACE, Suit.DIAMONDS);

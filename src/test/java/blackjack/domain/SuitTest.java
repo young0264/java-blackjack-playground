@@ -1,10 +1,9 @@
 package blackjack.domain;
 
-import org.assertj.core.api.Assertions;
+import blackjack.domain.card.Suit;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 class SuitTest {
 

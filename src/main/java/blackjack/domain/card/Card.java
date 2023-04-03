@@ -1,4 +1,4 @@
-package blackjack.domain;
+package blackjack.domain.card;
 
 public class Card {
     Denomination denomination;
@@ -18,4 +18,10 @@ public class Card {
     public Suit getSuit() {
         return suit;
     }
+
+    public String getCardInfo() {
+        String res = denomination.getSymbol() + suit.getName();
+        return res;
+    }
+
 }

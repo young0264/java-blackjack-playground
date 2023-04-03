@@ -9,8 +9,8 @@ public class CardDeck {
 
     private final List<Card> cardDeck = new ArrayList<>();
 
-    public CardDeck(final List<Card> cardDeck) {
-        this.cardDeck.addAll(cardDeck);
+    public CardDeck(final Cards cardDeck) {
+        this.cardDeck.addAll(cardDeck.getCards());
         shuffle();
     }
 
