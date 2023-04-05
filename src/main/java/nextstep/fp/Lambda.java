@@ -28,6 +28,7 @@ public class Lambda {
 
 
     private static int sumAllByCondition(List<Integer> numbers, Conditional conditional) {
+
         return numbers.stream()
 //                .filter(conditional::test)
                 .filter(number -> conditional.test(number))
