@@ -16,10 +16,9 @@ public class StringAddCalculatorTest {
 
     @Test
     void 구분자로_구분된_숫자의_합() {
-        String str = "1,2:5,4";
-
+        String str = "1,2:5;4//3\n2";
         Integer sumNum = StringAddCalculator.makeNumberToSum(str);
-        assertThat(sumNum).isEqualTo(12);
+        assertThat(sumNum).isEqualTo(17);
     }
     @Test
     void 구분자값이_없을때_숫자의_합() {
