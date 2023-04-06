@@ -3,6 +3,10 @@ package nextstep.fp;
 import java.util.List;
 
 public class Lambda {
+
+    public static final int ZERO = 0;
+    public static final int TWO = 2;
+    public static final int THREE = 3;
     public static void printAllOld(List<Integer> numbers) {
         System.out.println("printAllOld");
         numbers.forEach(System.out::println);
@@ -31,10 +35,10 @@ public class Lambda {
         return sumAllByCondition(numbers, number -> true);
     }
         public static int sumAllEven(List<Integer> numbers) {
-        return sumAllByCondition(numbers, number -> number % 2 == 0);
+        return sumAllByCondition(numbers, number -> number % TWO == ZERO);
     }
     public static int sumAllOverThree(List<Integer> numbers) {
-        return sumAllByCondition(numbers, number -> number > 3);
+        return sumAllByCondition(numbers, number -> number > THREE);
     }
 
 

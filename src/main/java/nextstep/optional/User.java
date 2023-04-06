@@ -6,6 +6,9 @@ public class User {
     private String name;
     private Integer age;
 
+    public static final int MIN_AGE = 30;
+    public static final int MAX_AGE = 45;
+
     public User(String name, Integer age) {
         this.name = name;
         this.age = age;
@@ -27,8 +30,8 @@ public class User {
         boolean isInRange = false;
 
         if (user != null && user.getAge() != null
-                && (user.getAge() >= 30
-                && user.getAge() <= 45)) {
+                && (user.getAge() >= MIN_AGE
+                && user.getAge() <= MAX_AGE)) {
             isInRange = true;
         }
         return isInRange;
@@ -43,7 +46,7 @@ public class User {
     }
 
     private static boolean isAgeInRange(Integer age) {
-        return age != null && age >= 30 && age <= 45;
+        return age != null && age >= MIN_AGE && age <= MAX_AGE;
     }
 
     @Override

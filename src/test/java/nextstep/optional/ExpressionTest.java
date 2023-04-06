@@ -15,8 +15,7 @@ public class ExpressionTest {
     @Test
     public void notValidExpression() {
         assertThatIllegalArgumentException()
-                .isThrownBy(() -> {
-                    Expression.of("&");
-                });
+                .isThrownBy(() -> Expression.of("&"))
+                .withMessage("&는 사칙연산에 해당하지 않는 표현식입니다.");
     }
 }
