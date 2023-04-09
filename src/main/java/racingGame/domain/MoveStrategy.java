@@ -1,2 +1,5 @@
-package racingGame.domain;public interface MoveStrategy {
+package racingGame.domain;
+
+public interface MoveStrategy {
+    boolean isMovable();
 }
