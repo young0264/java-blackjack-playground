@@ -1,18 +1,10 @@
 package calculator;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class StringAddCalculatorTest {
-
-    // 쉼표(,) 또는 콜론(:)을 구분자로 가지는 문자열을 전달하는 경우 구분자를 기준으로 분리한 각 숫자의 합을 반환 (예: “” => 0, "1,2" => 3, "1,2,3" => 6, “1,2:3” => 6)
-    //1. 문자열을 구분하는 기능
 
     @Test
     void 구분자로_구분된_숫자의_합() {
@@ -21,15 +13,47 @@ public class StringAddCalculatorTest {
         assertThat(sumNum).isEqualTo(17);
     }
     @Test
-    void 구분자값이_없을때_숫자의_합() {
+    void 입력이_null_혹은_없을때_합은0() {
         String str = "";
         Integer sumNum = StringAddCalculator.makeNumberToSum(str);
         assertThat(sumNum).isEqualTo(0);
+
+        String str2 = null;
+        Integer sumNum2 = StringAddCalculator.makeNumberToSum(str2);
+        assertThat(sumNum2).isEqualTo(0);
+    }
+
+    @Test
+    void 숫자_하나일때() {
+        String str = "1";
+        Integer number = StringAddCalculator.makeNumberToSum(str);
+        assertThat(number).isEqualTo(1);
     }
 
     @Test
     void 문자열_null_zero_검증() {
         String str = "";
-        assertThat(StringAddCalculator.isValidStr(str)).isFalse();
+        assertThat(StringAddCalculator.isEmptyStr(str)).isTrue();
     }
+
+    @Test
+    void 양수는_참_리턴() {
+        assertThat(StringAddCalculator.isNotMinus(1)).isTrue();
+    }
+    @Test
+    void 음수는_예외_리턴() {
+        assertThatThrownBy(() -> StringAddCalculator.isNotMinus(-1))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("음수값은 포함될 수 없습니다.");
+    }
+    @Test
+    void 음수가_포함되면_예외() {
+        String str = "-1,2,3";
+        assertThatThrownBy(() -> {
+            StringAddCalculator.makeNumberToSum(str);
+        })
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("음수값은 포함될 수 없습니다.");
+    }
+
 }
