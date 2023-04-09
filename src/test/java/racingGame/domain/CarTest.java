@@ -2,6 +2,7 @@ package racingGame;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import racingGame.domain.CarName;
 
 //* 기능 요구사항
 //        - 자동차 이름은 쉼표(,)를 기준으로 구분한다. -> CarName
