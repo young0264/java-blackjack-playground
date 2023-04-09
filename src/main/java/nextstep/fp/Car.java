@@ -5,6 +5,7 @@ import java.util.Objects;
 public class Car {
     private final String name;
     private final int position;
+    public static final int INCREASE_DIST = 1;
 
     public Car(String name, int position) {
         this.name = name;
@@ -13,7 +14,7 @@ public class Car {
 
     public Car move(MoveStrategy moveStrategy) {
         if (moveStrategy.isMovable()) {
-            return new Car(name, position + 1);
+            return new Car(name, position + INCREASE_DIST);
         }
         return this;
     }
