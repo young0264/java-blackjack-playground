@@ -1,8 +1,11 @@
-package racingGame;
+package racingGame.domain;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import racingGame.domain.CarName;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 //* 기능 요구사항
 //        - 자동차 이름은 쉼표(,)를 기준으로 구분한다. -> CarName
@@ -22,9 +25,31 @@ public class CarTest {
     @Test
     void 자동차이름_5자가_넘으면_예외처리() {
         String name = "페라리가너무길어";
-        Assertions.assertThatThrownBy(() ->new CarName(name))
+        assertThatThrownBy(() ->new CarName(name))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("자동차 이름은 5자를 넘을 수 없습니다.");
     }
+
+    @Test
+    void 자동차_거리_가져오기() {
+        Car car = new Car(new CarName("페라리"), new CarDist(7));
+        assertThat(car.getCarDist()).isEqualTo(7);
+    }
+
+    @Test
+    void 자동차_이름_가져오기() {
+        Car car = new Car(new CarName("페라리"), new CarDist(7));
+        assertThat(car.getCarName()).isEqualTo("페라리");
+    }
+
+    @Test
+    void Car_move() {
+//        Move 랜덤임
+//        Car car = new Car(new CarName("페라리"), new CarDist(7));
+//        car.move(new CarMoveStrategy());
+//        assertThat(car.getCarDist()).isEqualTo(8);
+    }
+
+
 
 }
