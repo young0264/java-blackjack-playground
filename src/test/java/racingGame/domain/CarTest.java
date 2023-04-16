@@ -25,7 +25,7 @@ public class CarTest {
     @Test
     void 자동차이름_5자가_넘으면_예외처리() {
         String name = "페라리가너무길어";
-        assertThatThrownBy(() ->new CarName(name))
+        assertThatThrownBy(() -> new CarName(name))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("자동차 이름은 5자를 넘을 수 없습니다.");
     }
@@ -44,12 +44,16 @@ public class CarTest {
 
     @Test
     void Car_move() {
-//        Move 랜덤임
-//        Car car = new Car(new CarName("페라리"), new CarDist(7));
-//        car.move(new CarMoveStrategy());
-//        assertThat(car.getCarDist()).isEqualTo(8);
-    }
 
+        Car car = new Car(new CarName("페라리"), new CarDist(7));
+        car.move(new CarMoveStrategy(){
+            @Override
+            public boolean isMovable() {
+                return true;
+            }
+        });
+        assertThat(car.getCarDist()).isEqualTo(8);
+    }
 
 
 }
