@@ -1,5 +1,6 @@
 package racingGame.domain;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
@@ -30,5 +31,13 @@ public class CarsTest {
         Cars cars = new Cars(carsList);
         assertThat(Cars.getMaxDist(cars)).isEqualTo(6);
     }
+
+    @Test
+    void 자동차_리스트_get() {
+        Cars cars = new Cars(carsList);
+        Assertions.assertThat(cars.getCarList()).isEqualTo(carsList);
+        Assertions.assertThat(cars.getCarList().size()).isEqualTo(carsList.size());
+    }
+
 
 }
