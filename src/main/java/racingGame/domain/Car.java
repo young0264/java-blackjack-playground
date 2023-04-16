@@ -1,6 +1,7 @@
 package racingGame.domain;
 
 public class Car {
+
     CarName carName;
     CarDist carDist;
 
@@ -10,9 +11,13 @@ public class Car {
     }
 
     public void move(CarMoveStrategy carMoveStrategy) {
-        if (carMoveStrategy.isMovable()) {
+        if (isMovable(carMoveStrategy)) {
             carDist.stepForward();
         }
+    }
+
+    private static boolean isMovable(CarMoveStrategy carMoveStrategy) {
+        return carMoveStrategy.isMovable();
     }
 
     public String getCarName() {
