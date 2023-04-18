@@ -1,25 +1,25 @@
 package fuel;
 
-public interface Car {
+public abstract class Car {
     /**
      * 연비
      */
-    double getDistancePerLiter();
+    abstract double getDistancePerLiter();
 
     /**
      * 여행하려는 거리
      */
-    double getTripDistance();
+    abstract double getTripDistance();
 
     /**
      * 차종 이름
      */
-    String getName();
+    abstract String getName();
 
     /**
      * 주입해야할 연료량
      */
-    default double getChargeQuantity(){
+    double getChargeQuantity(){
         return getTripDistance() / getDistancePerLiter();
     }
 }
