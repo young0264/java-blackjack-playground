@@ -1,6 +1,6 @@
 package fuel;
 
-public abstract class Car {
+public abstract class Carss {
     /**
      * 연비
      */
