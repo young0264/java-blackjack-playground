@@ -27,6 +27,7 @@ public class ComputerStore {
                 .map(Computer::getSoundcard)
                 .map(Soundcard::getUsb)
                 .map(USB::getVersion)
-                .orElseThrow(() -> new IllegalArgumentException(UNKNOWN_VERSION));
+                .orElse(UNKNOWN_VERSION);
+//                .orElseThrow(() -> new IllegalArgumentException(UNKNOWN_VERSION));
     }
 }
