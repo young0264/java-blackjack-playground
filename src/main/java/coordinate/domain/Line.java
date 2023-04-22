@@ -11,7 +11,9 @@ public class Line extends AbstractFigure{
 
     @Override
     public double pointResult() {
-        return pointList.get(0).getLengthEachPoint(pointList.get(1));
+        Point pointFist = getPointList().get(0);
+        Point pointSecond = getPointList().get(1);
+        return pointFist.getLengthEachPoint(pointSecond);
     }
 
     @Override

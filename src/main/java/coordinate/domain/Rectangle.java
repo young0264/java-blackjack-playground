@@ -15,8 +15,8 @@ public class Rectangle extends AbstractFigure {
 
     @Override
     public double pointResult() {
-        Set<Integer> collectX = getUniqueCoordinateX(pointList);
-        Set<Integer> collectY = getUniqueCoordinateY(pointList);
+        Set<Integer> collectX = getUniqueCoordinateX(getPointList());
+        Set<Integer> collectY = getUniqueCoordinateY(getPointList());
 
         return calculatePointLength(collectX) * calculatePointLength(collectY);
     }
