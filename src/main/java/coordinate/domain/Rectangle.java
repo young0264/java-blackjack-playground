@@ -6,20 +6,24 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class Rectangle {
+public class Rectangle extends AbstractFigure {
 
-    List<Point> pointList;
-
+    public static final String OUTPUT_TRIANGLE_RESULT = "삼각형 넓이는 ";
     public Rectangle(List<Point> pointList) {
-        this.pointList = pointList;
+        super(pointList);
     }
 
+    @Override
     public double pointResult() {
-
         Set<Integer> collectX = getUniqueCoordinateX(pointList);
         Set<Integer> collectY = getUniqueCoordinateY(pointList);
 
         return calculatePointLength(collectX) * calculatePointLength(collectY);
+    }
+
+    @Override
+    public String getFigureResult() {
+        return String.format(OUTPUT_TRIANGLE_RESULT + pointResult());
     }
 
     private double calculatePointLength(Set<Integer> collectCoordinates) {
