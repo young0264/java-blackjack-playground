@@ -6,7 +6,7 @@ import static java.lang.Math.pow;
 
 public class Triangle extends AbstractFigure {
 
-    public static final String OUTPUT_RECTANGLE_RESULT = "사각형 넓이는 ";
+    public static final String OUTPUT_TRIANGLE_RESULT = "삼각형 넓이는 ";
 
     public Triangle(List<Point> pointList) {
         super(pointList);
@@ -27,7 +27,7 @@ public class Triangle extends AbstractFigure {
 
     @Override
     public String getFigureResult() {
-        return OUTPUT_RECTANGLE_RESULT + pointResult();
+        return OUTPUT_TRIANGLE_RESULT + pointResult();
     }
 
     private double calculateHeronFomula(double length1, double length2, double length3) {
