@@ -16,6 +16,10 @@ public class OutputView {
         printHorizontalNumber();
     }
 
+    public static void printFigureResult(Figure figure) {
+        System.out.println((figure.getFigureResult()));
+    }
+
 
 
     public static void printHorizontal() {
@@ -51,6 +55,7 @@ public class OutputView {
         for (int i = 0; i <= 24; i++) {
             printBarNumber(i);
         }
+        enterLine();
     }
 
     private static void enterLine() {
