@@ -8,7 +8,8 @@ import java.util.stream.Collectors;
 
 public class Rectangle extends AbstractFigure {
 
-    public static final String OUTPUT_TRIANGLE_RESULT = "삼각형 넓이는 ";
+    public static final String OUTPUT_RECTANGLE_RESULT = "사각형 넓이는 ";
+
     public Rectangle(List<Point> pointList) {
         super(pointList);
     }
@@ -23,7 +24,7 @@ public class Rectangle extends AbstractFigure {
 
     @Override
     public String getFigureResult() {
-        return String.format(OUTPUT_TRIANGLE_RESULT + pointResult());
+        return String.format(OUTPUT_RECTANGLE_RESULT + pointResult());
     }
 
     private double calculatePointLength(Set<Integer> collectCoordinates) {
